@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "username": "shubham talekar",
+      "number": 324534523423
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

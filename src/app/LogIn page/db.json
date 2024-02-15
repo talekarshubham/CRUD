@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 4,
+      "username": "shubham",
+      "number": "dgf4567"
+    },
+    {
+      "id": 7,
+      "username": "shubham talekar",
+      "number": "drtfgyuh8768"
+    },
+    {
+      "id": 8,
+      "username": "sdfghj resdfghj kmnbvc",
+      "number": "fghjkl;"
+    },
+    {
+      "id": 9,
+      "username": "shubham-talekar-",
+      "number": "sdfghjkdr"
+    },
+    {
+      "id": 12,
+      "username": "ghjk",
+      "number": "sdfghjk"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
