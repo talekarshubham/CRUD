@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { CrudServiceService } from 'src/app/Service/crud-service.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { CrudServiceService } from 'src/app/Service/crud-service.service';
 export class CrudComponent {
   loginForm: FormGroup;
   users: any
-  constructor(private formBuilder: FormBuilder, private crudservice: CrudServiceService) {
+  constructor(private formBuilder: FormBuilder, private crudservice: CrudServiceService,private router:Router) {
     this.loginForm = this.formBuilder.group({
       id: [null],
       username: ['', Validators.required,],
@@ -20,7 +21,7 @@ export class CrudComponent {
 
   ngOnInit() {
 
-    this.getuserdata();
+    // this.getuserdata();
     const abc=10;
     setTimeout(()=>{
       console.log(abc);
@@ -46,6 +47,7 @@ export class CrudComponent {
       this.loginForm.reset();
 
       this.getuserdata();
+      // this.router.navigate(['/crud-table']);
     }
 
   }
@@ -55,19 +57,5 @@ export class CrudComponent {
       this.users = res
     })
   }
-  deleteItem(user: any) {
-    // console.log(user);
-    this.crudservice.deletData(user.id).subscribe((res) => {
-      // console.log(res);
-    })
-
-    this.getuserdata();
-  }
-  editItem(user: any) {
-    // console.log(user);
-    // console.log(this.loginForm.controls);
-    this.loginForm.controls['username'].setValue(user.username)
-    this.loginForm.controls['id'].setValue(user.id)
-    this.loginForm.controls['number'].setValue(user.number)
-  }
+ 
 }

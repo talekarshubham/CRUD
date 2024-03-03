@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CrudComponent } from './LogIn page/crud/crud.component';
+import { CrudTableComponent } from './LogIn page/crud-table/crud-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrudComponent,
+    CrudTableComponent,
   ],
   imports: [
     BrowserModule,

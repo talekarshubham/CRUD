@@ -29,30 +29,7 @@
             </div>
         </div>
     </div>
-    <div class="row mt-4">
-        <div class="col-md-6 offset-md-3">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Contact</th>
-                        <th>Delete</th>
-                        <th>Edit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let user of users">
-                        <td>{{ user.username }}</td>
-                        <td>{{ user.number }}</td>
-                        <td>
-                            <button class="btn btn-danger" (click)="deleteItem(user)">Delete</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-primary" (click)="editItem(user)" >Edit</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
 </div>
+<app-crud-table [loginForm]="loginForm" 
+[users]="users"
+></app-crud-table>
