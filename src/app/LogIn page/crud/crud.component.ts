@@ -33,14 +33,14 @@ export class CrudComponent {
     // console.log(this.loginForm.get('username')?.invalid ,this.loginForm.get('username')?.dirty || this.loginForm.get('username')?.touched);
 
     if (this.loginForm.valid) {
-      console.log(this.loginForm);
+      // console.log(this.loginForm);
       if (this.loginForm.value.id) {
         this.crudservice.updateData(this.loginForm.value.id,this.loginForm.value).subscribe((res) => {
-          console.log(res);
+          // console.log(res);
         })
       } else {
         this.crudservice.postData(this.loginForm.value).subscribe((res) => {
-          console.log(res);
+          // console.log(res);
         })
       }
       this.loginForm.reset();
@@ -51,14 +51,14 @@ export class CrudComponent {
   }
   getuserdata() {
     this.crudservice.getData().subscribe((res) => {
-      console.log(res);
+      // console.log(res);
       this.users = res
     })
   }
   deleteItem(user: any) {
-    console.log(user);
+    // console.log(user);
     this.crudservice.deletData(user.id).subscribe((res) => {
-      console.log(res);
+      // console.log(res);
     })
 
     this.getuserdata();

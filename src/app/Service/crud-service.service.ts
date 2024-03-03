@@ -10,7 +10,7 @@ export class CrudServiceService {
 
   constructor(private http: HttpClient) { }
   postData(data: any): Observable<any> {
-    console.log(data);
+   // console.log(data);
     return this.http.post(this.apiUrl + '/posts', data,);
   }
   getData(): Observable<any> {
@@ -23,7 +23,7 @@ export class CrudServiceService {
     return this.http.delete(url);
   }
   updateData(id:number,data:any): Observable<any> {
-    console.log(data);
+   // console.log(data);
     let url=this.apiUrl + `/posts/${id}`
     return this.http.put(url,data);
   }

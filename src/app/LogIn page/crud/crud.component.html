@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    CRUD Operations
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="username">Name</label>
+                            <input type="text" id="username" formControlName="username" class="form-control">
+                            <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)"
+                                class="error-text">
+                                This field is required.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="number">Contact</label>
+                            <input type="number" id="number" formControlName="number" class="form-control">
+                            <div *ngIf="loginForm.get('number')?.invalid && (loginForm.get('number')?.dirty || loginForm.get('number')?.touched)"
+                                class="error-text">
+                                This field is required.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Contact</th>
+                        <th>Delete</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.number }}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteItem(user)">Delete</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary" (click)="editItem(user)" >Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
