@@ -20,13 +20,7 @@ export class CrudComponent {
   }
 
   ngOnInit() {
-
-    // this.getuserdata();
-    const abc=10;
-    setTimeout(()=>{
-      console.log(abc);
-      
-    },3000)
+    this.getuserdata();
   }
 
   onSubmit() {
